@@ -889,6 +889,9 @@ const Node = {
     if (range.isCollapsed && startOffset == 0) {
       const previous = this.getPreviousText(startKey)
       if (!previous || !previous.length) return []
+      if (this.getParent(previous.key).key !== this.getParent(startKey)) {
+        return []
+      }
       const char = previous.characters.get(previous.length - 1)
       return char.marks.toArray()
     }
