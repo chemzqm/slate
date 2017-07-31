@@ -111,7 +111,8 @@ function Plugin(options = {}) {
     const { anchorNode, anchorOffset, focusNode, focusOffset } = native
     const anchorPoint = getPoint(anchorNode, anchorOffset, state, editor)
     const focusPoint = getPoint(focusNode, focusOffset, state, editor)
-    if (anchorPoint && focusPoint) {
+    const isComposing = data.isComposing
+    if (anchorPoint && focusPoint && !isComposing) {
       const { selection } = state
       if (
         selection.anchorKey !== anchorPoint.key ||
