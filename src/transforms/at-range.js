@@ -1077,7 +1077,7 @@ Transforms.wrapBlockAtRange = (transform, range, block, options = {}) => {
 
   // If there is only one block in the selection then we know the parent and
   // siblings.
-  if (blocks.length === 1) {
+  if (blocks.size === 1) {
     parent = document.getParent(firstblock.key)
     siblings = blocks
   }
