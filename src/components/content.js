@@ -195,6 +195,7 @@ class Content extends React.Component {
 
     const anchorSpan = this.element.querySelector(`[data-offset-key="${anchorKey}-${anchorIndex}"]`)
     const focusSpan = this.element.querySelector(`[data-offset-key="${focusKey}-${focusIndex}"]`)
+    if (!anchorSpan || !focusSpan) return
     const anchorEl = findDeepestNode(anchorSpan)
     const focusEl = findDeepestNode(focusSpan)
 
