@@ -142,6 +142,7 @@ class Editor extends React.Component {
 
   componentWillReceiveProps = (props) => {
     let { stack } = this.state
+    let {document} = this.state.state
 
     // If any plugin-related properties will change, create a new `Stack`.
     for (const prop of PLUGINS_PROPS) {
@@ -153,6 +154,9 @@ class Editor extends React.Component {
 
     // Resolve the state, running the before change handler of the stack.
     const state = stack.onBeforeChange(props.state, this)
+    if (document !== state.document) {
+      this.onChange(state)
+    }
     this.cacheState(state)
     this.setState({ state })
   }
