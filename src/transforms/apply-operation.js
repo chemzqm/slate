@@ -472,8 +472,6 @@ function splitNode(state, operation) {
   // If either the anchor of focus was after the split, we need to update them.
   if (splitFocus || splitAnchor) {
     const nextText = document.getNextText(text.key)
-    const marks = text.getMarksAtIndex(text.length - 1)
-    if (marks) selection = selection.set('marks', marks)
 
     if (splitAnchor) {
       selection = selection.merge({

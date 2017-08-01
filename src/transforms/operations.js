@@ -421,7 +421,7 @@ Transforms.setSelectionOperation = (transform, properties, options = {}) => {
     properties.marks == selection.marks &&
     moved
   ) {
-    // props.marks = null
+    props.marks = null
   }
 
   // Resolve the selection keys into paths.
