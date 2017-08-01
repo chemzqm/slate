@@ -64,6 +64,10 @@ class Placeholder extends React.Component {
   isVisible = () => {
     const { firstOnly, node, parent } = this.props
     if (node.text) return false
+    const { size } = parent.nodes
+    if (size === 0) return true
+    if (size > 1) return false
+    if (parent.nodes.first().type !== 'paragraph') return false
 
     if (firstOnly) {
       if (parent.nodes.size > 1) return false
