@@ -299,11 +299,17 @@ Transforms.setInline = (transform, properties) => {
 Transforms.splitBlock = (transform, depth = 1) => {
   const { state } = transform
   const { selection } = state
+  let marks = selection.marks
+  if (!marks) {
+    const last = state.anchorText.characters.last()
+    if (last) marks = last.marks
+  }
   transform
     .snapshotSelection()
     .splitBlockAtRange(selection, depth)
     .collapseToEnd()
     .snapshotSelection()
+    .select({ marks })
 }
 
 /**
