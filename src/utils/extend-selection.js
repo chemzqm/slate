@@ -1,3 +1,4 @@
+import { IS_CHROME } from '../constants/environment'
 
 /**
  * Extends the given selection to a given node and offset
@@ -10,7 +11,7 @@
 
 function extendSelection(selection, el, offset) {
   // Use native method when possible
-  if (typeof selection.extend === 'function') return selection.extend(el, offset)
+  if (typeof selection.extend === 'function' && IS_CHROME) return selection.extend(el, offset)
 
   // See https://gist.github.com/tyler-johnson/0a3e8818de3f115b2a2dc47468ac0099
   const range = document.createRange()
