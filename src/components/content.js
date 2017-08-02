@@ -345,7 +345,7 @@ class Content extends React.Component {
     this.tmp.isComposing = true
     this.tmp.compositions++
 
-    this.props.onCompositionStart(event)
+    this.props.onCompositionEnd(event)
     debug('onCompositionStart', { event })
   }
 
