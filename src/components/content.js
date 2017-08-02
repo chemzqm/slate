@@ -360,13 +360,13 @@ class Content extends React.Component {
   onCompositionEnd = (event) => {
     if (!this.isInEditor(event.target)) return
 
-    this.tmp.forces++
     const count = this.tmp.compositions
 
     // The `count` check here ensures that if another composition starts
     // before the timeout has closed out this one, we will abort unsetting the
     // `isComposing` flag, since a composition in still in affect.
     setTimeout(() => {
+      this.tmp.forces++
       if (this.tmp.compositions > count) return
       this.tmp.isComposing = false
       this.forceUpdate()
