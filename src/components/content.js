@@ -268,7 +268,7 @@ class Content extends React.Component {
     if (this.props.readOnly) return
     if (!this.isInEditor(event.target)) return
 
-    const data = {isComposing: this.tmp.isComposing}
+    const data = { isComposing: this.tmp.isComposing || false }
 
     debug('onBeforeInput', { event, data })
     this.props.onBeforeInput(event, data)
