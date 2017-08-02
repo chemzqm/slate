@@ -131,6 +131,11 @@ class Editor extends React.Component {
         this.onChange(next)
       }
     }
+    let { onCompositionStart, onCompositionEnd } = props
+    onCompositionStart = onCompositionStart || function () {}
+    onCompositionEnd = onCompositionEnd || function () {}
+    this.onCompositionStart = onCompositionStart.bind(this)
+    this.onCompositionEnd = onCompositionEnd.bind(this)
   }
 
   /**
