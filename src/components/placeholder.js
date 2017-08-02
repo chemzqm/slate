@@ -87,7 +87,7 @@ class Placeholder extends React.Component {
    * @return {Element}
    */
 
-  render = () => {
+  render() {
     const isVisible = this.isVisible()
     if (!isVisible) return null
 
