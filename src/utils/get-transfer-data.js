@@ -1,6 +1,7 @@
 
 import Base64 from '../serializers/base-64'
 import TYPES from '../constants/types'
+import { IS_IE } from '../constants/environment'
 
 /**
  * Fragment matching regexp for HTML nodes.
@@ -18,8 +19,8 @@ const FRAGMENT_MATCHER = / data-slate-fragment="([^\s]+)"/
  */
 
 function getTransferData(transfer) {
-  let fragment = transfer.getData(TYPES.FRAGMENT) || null
-  let node = transfer.getData(TYPES.NODE) || null
+  let fragment = IS_IE ? null : transfer.getData(TYPES.FRAGMENT) || null
+  let node = IS_IE ? null : transfer.getData(TYPES.NODE) || null
   const html = transfer.getData('text/html') || null
   const rich = transfer.getData('text/rtf') || null
   let text = transfer.getData('text/plain') || null
