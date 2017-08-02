@@ -327,7 +327,7 @@ class Node extends React.Component {
       const leaf = this.renderLeaf(ranges, range, i, offset)
       offset += range.text.length
       return leaf
-    })
+    }).toArray()
 
     return (
       <span data-key={node.key}>

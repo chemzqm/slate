@@ -267,7 +267,7 @@ class Html {
 
   serialize = (state, options = {}) => {
     const { document } = state
-    const elements = document.nodes.map(this.serializeNode)
+    const elements = document.nodes.map(this.serializeNode).toArray()
     if (options.render === false) return elements
 
     const html = ReactDOMServer.renderToStaticMarkup(<body>{elements}</body>)
@@ -285,10 +285,10 @@ class Html {
   serializeNode = (node) => {
     if (node.kind == 'text') {
       const ranges = node.getRanges()
-      return ranges.map(this.serializeRange)
+      return ranges.map(this.serializeRange).toArray()
     }
 
-    const children = node.nodes.map(this.serializeNode)
+    const children = node.nodes.map(this.serializeNode).toArray()
 
     for (const rule of this.rules) {
       if (!rule.serialize) continue
