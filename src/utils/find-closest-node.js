@@ -18,7 +18,7 @@ function findClosestNode(node, selector) {
     i = matches.length
     while (--i >= 0 && matches.item(i) !== parentNode);
   }
-  while ((i < 0) && (parentNode = parentNode.parentElement))
+  while ((i < 0) && (parentNode = parentNode.parentNode))
 
   return parentNode
 }
