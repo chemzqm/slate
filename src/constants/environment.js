@@ -1,8 +1,7 @@
 
 import browser from 'is-in-browser'
 
-/**
- * Browser matching rules.
+/** Browser matching rules.
  *
  * @type {Array}
  */
@@ -74,6 +73,7 @@ if (browser) {
 export const IS_CHROME = BROWSER === 'chrome'
 export const IS_FIREFOX = BROWSER === 'firefox'
 export const IS_SAFARI = BROWSER === 'safari'
+export const IS_IE = BROWSER === 'ie'
 
 export const IS_MAC = OS === 'macos'
 export const IS_WINDOWS = OS === 'windows'
