@@ -1,7 +1,7 @@
 {
   "name": "@happyiterating/slate",
   "description": "A completely customizable framework for building rich text editors.",
-  "version": "0.21.9",
+  "version": "0.21.10",
   "license": "MIT",
   "repository": "git://github.com/chemzqm/slate.git",
   "main": "./lib/index.js",
