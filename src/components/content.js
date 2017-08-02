@@ -345,7 +345,7 @@ class Content extends React.Component {
     this.tmp.isComposing = true
     this.tmp.compositions++
 
-    this.props.onCompositionEnd(event)
+    this.props.onCompositionStart(event)
     debug('onCompositionStart', { event })
   }
 
@@ -372,7 +372,7 @@ class Content extends React.Component {
       this.forceUpdate()
     })
 
-    this.props.onCompositionStart(event)
+    this.props.onCompositionEnd(event)
     debug('onCompositionEnd', { event })
   }
 
