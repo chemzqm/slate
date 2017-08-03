@@ -33,7 +33,7 @@ const TEXT_RULE = {
       }
     }
 
-    if (el.nodeName == '#text') {
+    if (el.type == 'text') {
       if (el.value && el.value.match(/<!--.*?-->/)) return
 
       return {
